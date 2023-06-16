@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="main">
+    <main class="main  ">
         <div class="container">
             <header class="header">
                 <img class="header-img" src="img/I2.png" alt="">
                 <div class="header__text">
                     <p class="header__text-title">Сагиров Руслан</p>
                     <div class="header__text-links">
-                        <a href="" class="header__text-link"><img src="img/Vector.svg" alt="">Телеграм</a>
-                        <a href="" class="header__text-link"><img src="img/Vector.svg" alt="">GitHub</a>
-                        <a href="" class="header__text-link"><img src="img/Vector.svg" alt="">Resume</a>
+                        <a href="https://t.me/Naytler" class="header__text-link"><img src="img/Vector.svg" alt="">Телеграм</a>
+                        <a href="https://github.com/Naytler" class="header__text-link"><img src="img/Vector.svg" alt="">GitHub</a>
+                        <a href="#" class="header__text-link"><img src="img/Vector.svg" alt="">Resume</a>
                     </div>
                 </div>
             </header>
@@ -34,6 +34,103 @@
             </form>
         </div>
     </main>
+    <section class="tabs1 ">
+        <div class="container tabs__container">
+            <form class="tabs1__form" id="add-form" action="">
+                <div class="dots">
+                    <div class="dot1">1</div>
+                    <div class="dot2">2</div>
+                    <div class="dot3">3</div>
+                </div>
+                <div class="input-box">
+                    <span class="tabs1__form-text">Nickname</span>
+                    <input class="tabs1__input"  id="field-nickname" data-required="true"  type="tel" placeholder="placeholder">
+                </div>
+                <div class="input-box">
+                    <span class="tabs1__form-text">Name</span>
+                    <input class="tabs1__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
+                </div>
+                <div class="input-box">
+                    <span class="tabs1__form-text">Surname</span>
+                    <input class="tabs1__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
+                </div>
+                <div class="input-selected">
+                    <select name="sex" id="field-sex">
+                        <option id="field-sex-option-man" value="man">man</option>
+                        <option id="field-sex-option-woman" value="woman">woman</option>
+                    </select>
+                </div>
+                <div class="tabs__btn">
+                    <button class="back-btn" id="button-back" type="submit">Назад</button>
+                    <button class="next-btn" id="button-next" type="submit">Далее</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="tabs2 ">
+        <div class="container tabs__container">
+            <form class="tabs2__form" id="add-form" action="">
+                <div class="dots">
+                    <div class="dot1">1</div>
+                    <div class="dot2">2</div>
+                    <div class="dot3">3</div>
+                </div>
+                <span class="tabs2__form-text">Advantages</span>
+                <div class="input-box2">
+                    <input class="tabs2__input"  id="field-nickname" data-required="true"  type="tel" placeholder="placeholder">
+                    <button><img src="img/bascet.svg" alt=""></button>
+                </div>
+                <div class="input-box2">
+                    <input class="tabs2__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
+                    <button><img src="img/bascet.svg" alt=""></button>
+                </div>
+                <div class="input-box2">
+                    <input class="tabs2__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
+                    <button><img src="img/bascet.svg" alt=""></button>
+                </div>
+                <button id="button-add">+</button>
+                <label class="lable-checkbox">Chekbox group</label>
+                <div class="form2__checkbox">
+                    <input type="checkbox" id="field-checkbox-group-option-1" value="1">
+                    <label for="interest1">1</label>                    
+                    <input type="checkbox" id="field-checkbox-group-option-2" value="2">
+                    <label for="interest2">2</label>
+                    <input type="checkbox" id="field-checkbox-group-option-3" value="3">
+                    <label for="interest3">3</label>
+                  </div>
+                  <label class="lable-radio">Radio group:</label>
+                  <div class="form2__radio">
+                    <input type="radio" name="status" id="field-radio-group-option-1" value="1">
+                    <label for="status1">1</label>
+                    <input type="radio" name="status" id="field-radio-group-option-2" value="2">
+                    <label for="status2">2</label>
+                    <input type="radio" name="status" id="field-radio-group-option-3" value="3">
+                    <label for="status3">3</label>
+                  </div>
+                <div class="tabs__btn">
+                    <button class="back-btn" id="button-back" type="submit">Назад</button>
+                    <button class="next-btn" id="button-next" type="submit">Далее</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="tabs3 ">
+        <div class="container container__tabs3">
+            <form class="tabs2__form" id="add-form" action="">
+                <div class="dots">
+                    <div class="dot1">1</div>
+                    <div class="dot2">2</div>
+                    <div class="dot3">3</div>
+                </div>
+                <span class="tabs2__form-text">About</span>
+                <textarea name="" id="field-about" cols="30" rows="10"placeholder='Placeholder'></textarea>
+                <div class="tabs__btn">
+                    <button class="back-btn" id="button-back" type="submit">Назад</button>
+                    <button class="next-btn" id="button-next" type="submit">Далее</button>
+                </div>
+            </form>
+        </div>
+    </section>
     <script src="js/app.js" defer></script>
 </body>
 </html>
