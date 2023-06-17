@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="main  ">
+    <main class="main " id="tab">
         <div class="container">
             <header class="header">
                 <img class="header-img" src="img/I2.png" alt="">
@@ -34,28 +34,38 @@
             </form>
         </div>
     </main>
-    <section class="tabs1 ">
+    <section class="tabs1 none" id="tab1">
         <div class="container tabs__container">
-            <form class="tabs1__form" id="add-form" action="">
-                <div class="dots">
-                    <div class="dot1">1</div>
-                    <div class="dot2">2</div>
-                    <div class="dot3">3</div>
+            <form class="tabs1__form" id="add-form1" action="">
+                <div class="line">
+                    <div class="line-dots">
+                        <div class="line__dot blue"><img class="dot" src="img/dot.svg" alt=""></div>
+                        <div class="line__line"></div>
+                        <div class="line__dot"></div>
+                        <div class="line__line"></div>
+                        <div class="line__dot"></div>
+                    </div>
+                    <div class="line-numbers">
+                        <div class="Num1">1</div>
+                        <div class="Num2">2</div>
+                        <div class="Num3">3</div>
+                    </div>
                 </div>
                 <div class="input-box">
                     <span class="tabs1__form-text">Nickname</span>
-                    <input class="tabs1__input"  id="field-nickname" data-required="true"  type="tel" placeholder="placeholder">
+                    <input class="tabs1__input"  id="field-nickname" maxlength="30" data-required="true"  type="text" placeholder="placeholder">
                 </div>
                 <div class="input-box">
                     <span class="tabs1__form-text">Name</span>
-                    <input class="tabs1__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
+                    <input class="tabs1__input" id="field-name" data-required="true" type="text" placeholder="placeholder" >
                 </div>
                 <div class="input-box">
                     <span class="tabs1__form-text">Surname</span>
-                    <input class="tabs1__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
+                    <input class="tabs1__input" id="field-surname" data-required="true" type="text" placeholder="placeholder" >
                 </div>
                 <div class="input-selected">
                     <select name="sex" id="field-sex">
+                        <option value="">Не выбрано</option>
                         <option id="field-sex-option-man" value="man">man</option>
                         <option id="field-sex-option-woman" value="woman">woman</option>
                     </select>
@@ -67,26 +77,35 @@
             </form>
         </div>
     </section>
-    <section class="tabs2 ">
+    <section class="tabs2 none" id="tab">
         <div class="container tabs__container">
             <form class="tabs2__form" id="add-form" action="">
-                <div class="dots">
-                    <div class="dot1">1</div>
-                    <div class="dot2">2</div>
-                    <div class="dot3">3</div>
+                <div class="line">
+                    <div class="line-dots">
+                        <div class="line__dot blue"><img class="gal" src="img/Gal.svg" alt=""></div>
+                        <div class="line__line blue"></div>
+                        <div class="line__dot blue"><img class="dot" src="img/dot.svg" alt=""></div>
+                        <div class="line__line"></div>
+                        <div class="line__dot"></div>
+                    </div>
+                    <div class="line-numbers">
+                        <div class="Num1">1</div>
+                        <div class="Num2">2</div>
+                        <div class="Num3">3</div>
+                    </div>
                 </div>
                 <span class="tabs2__form-text">Advantages</span>
                 <div class="input-box2">
-                    <input class="tabs2__input"  id="field-nickname" data-required="true"  type="tel" placeholder="placeholder">
-                    <button><img src="img/bascet.svg" alt=""></button>
+                    <input class="tabs2__input"  id="field-advantages-1" data-required="true"  type="tel" required placeholder="placeholder">
+                    <button><img class="bscet" src="img/bascet.svg" alt=""></button>
                 </div>
                 <div class="input-box2">
-                    <input class="tabs2__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
-                    <button><img src="img/bascet.svg" alt=""></button>
+                    <input class="tabs2__input" id="field-advantages-2" data-required="true" type="email" placeholder="placeholder" >
+                    <button><img class="bscet" src="img/bascet.svg" alt=""></button>
                 </div>
                 <div class="input-box2">
-                    <input class="tabs2__input" id="field-nickname" data-required="true" type="email" placeholder="placeholder" >
-                    <button><img src="img/bascet.svg" alt=""></button>
+                    <input class="tabs2__input" id="field-advantages-3" data-required="true" type="email" placeholder="placeholder" >
+                    <button><img class="bscet" src="img/bascet.svg" alt=""></button>
                 </div>
                 <button id="button-add">+</button>
                 <label class="lable-checkbox">Chekbox group</label>
@@ -114,19 +133,28 @@
             </form>
         </div>
     </section>
-    <section class="tabs3 ">
+    <section class="tabs3 none" id="tab">
         <div class="container container__tabs3">
             <form class="tabs2__form" id="add-form" action="">
-                <div class="dots">
-                    <div class="dot1">1</div>
-                    <div class="dot2">2</div>
-                    <div class="dot3">3</div>
+                <div class="line">
+                    <div class="line-dots">
+                        <div class="line__dot blue"><img class="gal" src="img/Gal.svg" alt=""></div>
+                        <div class="line__line blue"></div>
+                        <div class="line__dot blue"><img class="gal" src="img/Gal.svg" alt=""></div>
+                        <div class="line__line blue"></div>
+                        <div class="line__dot blue"><img class="dot" src="img/dot.svg" alt=""></div>
+                    </div>
+                    <div class="line-numbers">
+                        <div class="Num1">1</div>
+                        <div class="Num2">2</div>
+                        <div class="Num3">3</div>
+                    </div>
                 </div>
                 <span class="tabs2__form-text">About</span>
                 <textarea name="" id="field-about" cols="30" rows="10"placeholder='Placeholder'></textarea>
                 <div class="tabs__btn">
                     <button class="back-btn" id="button-back" type="submit">Назад</button>
-                    <button class="next-btn" id="button-next" type="submit">Далее</button>
+                    <button class="button-send" id="button-send" type="submit">Отправить</button>
                 </div>
             </form>
         </div>
@@ -134,3 +162,5 @@
     <script src="js/app.js" defer></script>
 </body>
 </html>
+
+https://api.sbercloud.ru/content/v1/bootcamp/frontend
