@@ -21,14 +21,14 @@
                 </div>
             </header>
             <hr>
-            <form class="form" id="add-form" action="">
-                <span class="form-text">Номер телефона</span>
-                <div class="input-box">
-                    <input class="input-form" data-required="true"  type="tel" placeholder="+7 999 999-99-99">
-                </div>
-                <span class="form-text">Email</span>
-                <div class="input-box">
-                    <input class="input-form" data-required="true" type="email" placeholder="tim.jennings@example.com" >
+            <form class="form" id="add-form" action="">                
+                <div class="input-box ma">
+                    <label for="inputNumber">Номер телефона</label>
+                    <input class="input-form" id="inputNumber" data-required="true"  type="tel" placeholder="+7 999 999-99-99">
+                </div>                
+                <div class="input-box ma">
+                    <label for="inputMail">Email</label>
+                    <input class="input-form" id="inputMail" data-required="true" type="email" placeholder="tim.jennings@example.com" >
                 </div>
                 <button class="send-btn" id="button-start" type="submit">Начать</button>
             </form>
@@ -36,7 +36,7 @@
     </main>
     <section class="tabs1 none" id="tab1">
         <div class="container tabs__container">
-            <form class="tabs1__form" id="add-form1" action="">
+            <form class="tabs1__form" id="add-form" action="">
                 <div class="line">
                     <div class="line-dots">
                         <div class="line__dot blue"><img class="dot" src="img/dot.svg" alt=""></div>
@@ -64,6 +64,7 @@
                     <input class="tabs1__input" id="field-surname" data-required="true" type="text" placeholder="placeholder" >
                 </div>
                 <div class="input-selected">
+                    <span class="tabs1__form-selected">Sex</span>
                     <select name="sex" id="field-sex">
                         <option value="">Не выбрано</option>
                         <option id="field-sex-option-man" value="man">man</option>
@@ -95,17 +96,19 @@
                     </div>
                 </div>
                 <span class="tabs2__form-text">Advantages</span>
-                <div class="input-box2">
-                    <input class="tabs2__input"  id="field-advantages-1" data-required="true"  type="tel" required placeholder="placeholder">
-                    <button><img class="bscet" src="img/bascet.svg" alt=""></button>
-                </div>
-                <div class="input-box2">
-                    <input class="tabs2__input" id="field-advantages-2" data-required="true" type="email" placeholder="placeholder" >
-                    <button><img class="bscet" src="img/bascet.svg" alt=""></button>
-                </div>
-                <div class="input-box2">
-                    <input class="tabs2__input" id="field-advantages-3" data-required="true" type="email" placeholder="placeholder" >
-                    <button><img class="bscet" src="img/bascet.svg" alt=""></button>
+                <div id="inputContainer">
+                    <div class="input-box2">
+                        <input class="tabs2__input"  id="field-advantages-1" data-required="true"  type="text" required placeholder="placeholder">
+                        <button id="button-remove-1"><img src="img/bascet.svg" alt=""></button>
+                    </div>
+                    <div class="input-box2">
+                        <input class="tabs2__input" id="field-advantages-2" data-required="true" type="text" required placeholder="placeholder" >
+                        <button id="button-remove-2"><img  src="img/bascet.svg" alt=""></button>
+                    </div>
+                    <div class="input-box2">
+                        <input class="tabs2__input" id="field-advantages-3" data-required="true" type="text" required placeholder="placeholder" >
+                        <button  id="button-remove-3"><img  src="img/bascet.svg" alt=""></button>
+                    </div>
                 </div>
                 <button id="button-add">+</button>
                 <label class="lable-checkbox">Chekbox group</label>
@@ -158,9 +161,16 @@
                 </div>
             </form>
         </div>
+            <button id="open-modal-btn"></button>
+        </div>
+        <div class="modal" id="my-modal">
+            <div class="modal__box">
+                <span class="modal-text">Форма успешно отправлена</span>
+                <img class="modal-img" src="img/modalAcc.svg" alt="">
+                <button class="modal__close-btn" id="close-my-modal-btn">На главную</button>
+            </div>
+        </div>
     </section>
     <script src="js/app.js" defer></script>
 </body>
 </html>
-
-https://api.sbercloud.ru/content/v1/bootcamp/frontend

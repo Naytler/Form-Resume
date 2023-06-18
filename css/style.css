@@ -49,10 +49,9 @@ body{
 
 
 .container{
-    max-width: 900px;
-    height: 100vh;
+    max-width: 821px;
     padding: 24px;
-    border-radius: 50px;
+    border-radius: 12px;
     margin: 0 auto;
     background-color: #fff;
 }
@@ -95,7 +94,7 @@ body{
     /* grid-template-columns: 1; */
 }
 
-.form-text{
+.input-box.ma{
     margin-top: 24px;
 }
 
@@ -114,6 +113,7 @@ body{
     background-color: #5558FA;
     color: #fff;
     margin-top: 48px;
+    margin-bottom: 291px;
 }
 
 .error  .input-form{
@@ -134,7 +134,7 @@ body{
 
 
 .tabs__container{
-    max-height: 821px;
+    max-height: 900px;
 }
 
 .line{
@@ -216,6 +216,14 @@ body{
     margin-right: 18px;
 }
 
+.input-selected{
+    display: grid;
+}
+
+.tabs1__form-selected{
+    margin-bottom: 8px;
+}
+
 #field-sex {
     max-width: 300px;
     height: 44px;
@@ -249,6 +257,7 @@ body{
     background-color: #5558FA;
     color: #fff;
     margin-top: 48px;
+    margin-bottom: 80px;
 }
 
 .tabs2__form{
@@ -260,6 +269,12 @@ body{
 
 .tabs2__form-text{
     margin-top: 50px;
+}
+
+#inputContainer{
+    display: grid;
+    justify-items: start;
+    gap: 8px;
 }
 
 .input-box2{
@@ -294,9 +309,13 @@ body{
     gap: 5px;
 }
 
+.tabs3{
+    padding: 24px;
+}
 
 .container__tabs3{
     height: 500px;
+    max-width: 900px;
 }
 
 
@@ -320,4 +339,81 @@ body{
 
 .active{
     display: block;
+}
+
+
+
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+}
+
+.modal__box {
+    display: grid;
+    justify-items: center;
+    position: relative;
+    max-width: 460px;
+    border-radius: 12px;
+    width: 100%;
+    padding: 0 105px;
+    height: 312px;
+    z-index: 1;
+    margin: 30px 15px;
+    background-color: white;
+    box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
+    transform: scale(0);
+    transition: transform .8s;
+}
+
+.modal-text{
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 32px;
+}
+
+.modal-img{
+    margin-top: 50px;
+}
+
+.modal__close-btn {
+    height: 44px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background-color: #5558FA;
+    color: #fff;
+    margin: 48px 0 32px 0;
+}
+
+.modal__close-btn svg path {
+    transition: fill .4s;
+}
+
+.modal__close-btn:hover svg path {
+    fill: blue;
+}
+
+.modal__close-btn:active svg path {
+    fill: rgb(186, 53, 0);
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.open .modal__box {
+    transform: scale(1);
 }

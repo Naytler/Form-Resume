@@ -1,12 +1,21 @@
-let phoneInput = document.querySelector('.input-form');
-let btnNext = Array.from(document.getElementsByClassName('next-btn'));
-let backBtn = Array.from(document.getElementsByClassName('back-btn'));
-let tabContent = Array.from(document.getElementsByClassName('none'));
-let tab1 = document.getElementsByClassName('tabs1')
-let main = document.querySelector('main');
-let nickName = document.getElementById('field-nickname');
-let namem = document.getElementById('field-name');
-let surname = document.getElementById('field-surname');
+const phoneInput = document.querySelector('.input-form');
+const btnNext = Array.from(document.getElementsByClassName('next-btn'));
+const backBtn = Array.from(document.getElementsByClassName('back-btn'));
+const tabContent = Array.from(document.getElementsByClassName('none'));
+const tab1 = document.getElementsByClassName('tabs1')
+const main = document.querySelector('main');
+const nickName = document.getElementById('field-nickname');
+const namem = document.getElementById('field-name');
+const surname = document.getElementById('field-surname');
+const addInput = document.getElementById('button-add');
+const inputContainer = document.getElementById('inputContainer');
+const remove1 = document.getElementById('button-remove-1');
+const remove2 = document.getElementById('button-remove-2');
+const remove3 = document.getElementById('button-remove-3');
+
+
+
+
 
 
 function validation(form){
@@ -49,21 +58,32 @@ function validation(form){
     return result;
 }
 
-
-
-document.getElementById('add-form').addEventListener('submit', function(event){
+let form = document.getElementById('add-form').addEventListener('submit', function(event){
     event.preventDefault();
     if(validation(this) === true){
         tab1[0].classList.add('active');
         main.classList.add('none');
-        console.log('все норм'); // сюда написать куда отправлять 
+        let formData = new FormData(form);
+        // let request = new XMLHttpRequest();
+        // // request.open("POST", "https://api.sbercloud.ru/content/v1/bootcamp/frontend", true)
+        // request.onreadystatechange = function() {
+        //     if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+        //       console.log(request.responseText);
+        //     } else {
+        //       console.log("Произошла ошибка при отправке формы.");
+        //     }
+        //   };
+        // request.send(formData);
     };
 });
+
+
+
 
 document.getElementById('button-send').addEventListener('click', function(event){
     event.preventDefault();
     if(validation(this) === true){
-        alert('отправлена')
+        document.getElementById("my-modal").classList.add("open")
         console.log('все норм'); // сюда написать куда отправлять 
     };
 });
@@ -145,7 +165,7 @@ function inputName(name, length){
         const maxLength = length;
         const input = e.target;
         const value = input.value;
-        const filteredValue = value.replace(/[^a-zA-Z0-9]/g, '').substring(0, maxLength);
+        const filteredValue = value.replace(/[^a-zA-Zа-яА-Я]/g, '').substring(0, maxLength);
         input.value = filteredValue;
     });
 };
@@ -154,32 +174,68 @@ inputName(namem, 50);
 inputName(surname, 50);
 
 
-// let addInput = document.getElementById('button-add');
-// let inputContainer = document.getElementsByClassName('input-box2');
 
-// addInput.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     const inputBox = document.createElement('div');
-//     inputBox.classList.add('input-box2');
-    
-//     const inputFields = document.querySelectorAll('.tabs2__input');
-//     const lastInput = inputFields[inputFields.length - 1];
-//     const lastId = parseInt(lastInput.id.split('-')[1]);
-//     const newId = `field-advantages-${lastId + 1}`;
 
-//     const newInput = document.createElement('input');
-//     newInput.type = 'text';
-//     newInput.classList.add('tabs2__input');
-//     newInput.id = newId;
-//     newInput.required = true;
+function removeBtn(btn){
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+    });
+}
+removeBtn(remove1);
+removeBtn(remove2)
+removeBtn(remove3)
 
-//     const removeBtn = document.createElement('button');
-//     removeBtn.classList.add('.bscet');
-//     removeBtn.textContent = 'del';
-//     removeBtn.addEventListener('click', () => {
-//         inputContainer.removeChild(inputBox); // Удаление строки с полем ввода
-//       });
-//     inputBox.appendChild(newInput);
-//     inputBox.appendChild(removeBtn);
-//     console.log('hey');
-// });
+addInput.addEventListener('click', (e) => {
+    const inputBox = document.createElement('div');
+    inputBox.classList.add('input-box2');
+    e.preventDefault();
+    const inputFields = document.querySelectorAll('.tabs2__input');
+    const lastInput = inputFields[inputFields.length - 1];
+    const lastId = parseInt(lastInput.id.split('-')[1]);
+    const newId = `field-advantages-${lastId + 1}`;
+
+    const newInput = document.createElement('input');
+    newInput.type = 'text';
+    newInput.classList.add('tabs2__input');
+    newInput.placeholder = 'placeholder';
+    newInput.id = newId;
+    newInput.required = true;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('bscet');
+    // removeBtn.textContent = 'del';
+    removeBtn.addEventListener('click', () => {
+        e.preventDefault();
+        inputContainer.removeChild(inputBox);
+      });
+
+    const createImg = document.createElement('img');
+    createImg.src = 'img/bascet.svg';
+
+    inputBox.appendChild(newInput);
+    inputBox.appendChild(removeBtn);
+    removeBtn.append(createImg);
+    inputContainer.appendChild(inputBox);
+    console.log('hey');
+});
+
+
+
+
+document.getElementById("open-modal-btn").addEventListener("click", function() {
+    document.getElementById("my-modal").classList.add("open")
+})
+
+document.getElementById("close-my-modal-btn").addEventListener("click", function() {
+    document.getElementById("my-modal").classList.remove("open");
+
+})
+
+document.querySelector("#my-modal .modal__box").addEventListener('click', event => {
+    event._isClickWithInModal = true;
+});
+document.getElementById("my-modal").addEventListener('click', event => {
+    if (event._isClickWithInModal) return;
+    event.currentTarget.classList.remove('open');
+});
